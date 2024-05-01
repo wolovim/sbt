@@ -1,0 +1,25 @@
+name: sbt
+
+plugins:
+  - name: solidity
+  - name: foundry
+  - name: alchemy
+
+dependencies:
+  - name: OpenZeppelin
+    github: OpenZeppelin/openzeppelin-contracts
+    version: 5.0.2
+
+solidity:
+  version: 0.8.23
+  import_remapping:
+    - "@openzeppelin/=OpenZeppelin/5.0.2"
+
+default_ecosystem: ethereum
+
+ethereum:
+  default_network: sepolia
+  sepolia:
+    default_provider: alchemy
+  local:
+    default_provider: foundry
